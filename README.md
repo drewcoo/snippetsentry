@@ -234,3 +234,26 @@ No one has ever told me not to under-comment.
 I find that testers usually comment too much. Testers and devs both name badly. The trick is to name better, write shorter methods, write methods with few parameters, and to name things what they are/do (yes, I know I called out "naming" twice in that list!). I find that when people have trouble naming things, they often have a bad design.
 
 If you have ever run Pylint, I hate that it expects every class and method to have an initial comment. Those are two of the checks I like to turn off as long as nobody else on the project cares. (I'm not married to Pylint, but I *need* a linter.)
+
+## 3. Retrospective
+
+Now that I've hurriedly "finished" this, here are some observations:
+
+- the code was too verbose
+- I should have included installation (`npm install`) and test-running instructions (`npx open cypress` to play with the tools locally, `npx cypress run` to run the suite locally, more cmdlines for recording to dashboard, etc.) but I figured it's triggered by CI and you have an invite to the Cypress dash, so you can run tests and see results as-is
+- in real life, I'd have access to the dev code so:
+  - test code could cohabitate with it, as it should be (I personally prefer monorepos for the sake of test and ops, both)
+  - it would be possible to add test-sought attributes to elements (`data-funky-button` or `cy-funky-button`)
+  - it would be more fitting to do service/component-level tests and contract tests and have everything tighter and faster and more targeted
+  - the readme needs diagrams or images - something more attention-grabbing
+  - I didn't stick as close to the directions as I could have
+  - should have had automation trigger only on code changes instead of any change (like pushing a version of this file)
+  - I didn't even bother with linting this code and now I feel so . . . unclean!
+  - in real life, I'd have had dev/pm involvement with the ET phase of things; just doing ad hoc activity also feels very wrong to me
+  - I gave myself much more forgiving timeboxes for all of this than I normally would
+  - I could have done Playwright, which is purer JS/TS and also lends itself better to LLMs, among other things, but:
+    - Cypress still has a better ecosystem and infrastructure
+    - I think that MSFT is absolutely terrible at testing tech (fired all the SDETs 20 years ago and the only older test product was the worst thing devdiv ever made . . . which eventually turned into Azure DevOps)
+    - maybe I should have made a fake bug tracker (or used this GitHub project's) as I explored
+
+  -

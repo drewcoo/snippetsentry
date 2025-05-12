@@ -9,6 +9,7 @@ module.exports = defineConfig({
     },
   },
   env: {
+    // I should put these in env vars later
     email: 'drewcoo@gmail.com',
     password: '5PB5Si@eNfgZLL',
   },
